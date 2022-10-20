@@ -3,14 +3,16 @@
 <div class="content">
   <div class="container">
     <div class="row align-items-start text-center">
-      <div class="col-4">
-        First Column
-      </div>
-      <div class="col-4">
-        Second Column
-      </div>
-      <div class="col-4" *ngIf="displayThirdColumn">
-        Third Column
+      <div class="col-4" *ngFor="let product of products">
+        <div class="product-detail">
+          <img class="product-image" [src]="product.image"/>
+          <h2>{{ product.title }}</h2>
+          <p class="product-description" [title]="product.description">
+            Description: {{ product.description }}
+          </p>
+          <p><strong>Price: {{ product.price }} €</strong></p>
+          <p><strong>Rating: {{ product.rating.rate }}</strong></p>
+        </div>
       </div>
     </div>
   </div>
