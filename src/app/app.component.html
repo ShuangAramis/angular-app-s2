@@ -9,7 +9,7 @@
       <div class="col-4">
         Second Column
       </div>
-      <div class="col-4">
+      <div class="col-4" *ngIf="displayThirdColumn">
         Third Column
       </div>
     </div>
@@ -17,5 +17,5 @@
 </div>
 
 <div class="text-center p-5">
-  <button type="button" class="btn btn-primary">Toggle Third Column</button>
+  <button type="button" class="btn btn-primary" (click)="toggleThirdColumn()">Toggle Third Column</button>
 </div>

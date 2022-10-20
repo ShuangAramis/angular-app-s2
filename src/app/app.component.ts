@@ -10,9 +10,14 @@ import { Product } from "../model/product";
 export class AppComponent {
   public products: Product[] = [];
   public product: any;
+  public displayThirdColumn = true;
 
   constructor(private httpClient: HttpClient) {
     this.fetchProducts();
+  }
+
+  public toggleThirdColumn() {
+    this.displayThirdColumn = !this.displayThirdColumn;
   }
 
   public fetchProducts() {
