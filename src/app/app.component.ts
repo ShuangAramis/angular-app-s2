@@ -31,4 +31,8 @@ export class AppComponent {
   public addProductToCart(productId: string) {
     window.alert(`Product ${productId} has been added to cart`);
   }
+
+  public deleteProduct(productIdx: number) {
+    this.products.splice(productIdx, 1);
+  }
 }
