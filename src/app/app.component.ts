@@ -27,4 +27,8 @@ export class AppComponent {
         this.product = this.products[0];
       });
   }
+
+  public addProductToCart(productId: string) {
+    window.alert(`Product ${productId} has been added to cart`);
+  }
 }

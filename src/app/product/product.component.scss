@@ -1,0 +1,17 @@
+.product-detail {
+  display: block;
+  padding: 20px;
+
+  .product-description {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .product-image {
+    height: 150px;
+    display: block;
+    margin: auto;
+  }
+}
