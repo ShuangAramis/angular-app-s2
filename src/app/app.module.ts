@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import {LOCALE_ID, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -7,18 +7,27 @@ import { HttpClientModule } from "@angular/common/http";
 import { HeaderComponent } from './header/header.component';
 import { ProductComponent } from './product/product.component';
 
+import localeFr from '@angular/common/locales/fr';
+import { registerLocaleData } from "@angular/common";
+import { ConvertDollarToEuroPipe } from './pipes/convert-dollar-to-euro.pipe';
+registerLocaleData(localeFr);
+
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
-    ProductComponent
+    ProductComponent,
+    ConvertDollarToEuroPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide: LOCALE_ID,
+    useValue: 'fr-FR'
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
