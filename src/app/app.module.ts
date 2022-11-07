@@ -10,6 +10,8 @@ import { ProductComponent } from './product/product.component';
 import localeFr from '@angular/common/locales/fr';
 import { registerLocaleData } from "@angular/common";
 import { ConvertDollarToEuroPipe } from './pipes/convert-dollar-to-euro.pipe';
+import { CartComponent } from './pages/cart/cart.component';
+import { ProductsComponent } from './pages/products/products.component';
 registerLocaleData(localeFr);
 
 @NgModule({
@@ -17,7 +19,9 @@ registerLocaleData(localeFr);
     AppComponent,
     HeaderComponent,
     ProductComponent,
-    ConvertDollarToEuroPipe
+    ConvertDollarToEuroPipe,
+    CartComponent,
+    ProductsComponent
   ],
   imports: [
     BrowserModule,
