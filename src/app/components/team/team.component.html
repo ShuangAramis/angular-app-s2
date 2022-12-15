@@ -1,0 +1,7 @@
+<h2>{{ team }}</h2>
+<h4 *ngFor="let player of players">
+  {{ player }}
+</h4>
+
+<button (click)="score()">Score</button>
+<button (click)="changePlayer()">Change player</button>

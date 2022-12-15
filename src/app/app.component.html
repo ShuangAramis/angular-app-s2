@@ -3,21 +3,34 @@
 <div class="content">
   <div class="container">
     <div class="row align-items-start text-center">
-      <div class="col-4" *ngFor="let product of products">
-        <div class="product-detail">
-          <img class="product-image" [src]="product.image"/>
-          <h2>{{ product.title }}</h2>
-          <p class="product-description" [title]="product.description">
-            Description: {{ product.description }}
-          </p>
-          <p><strong>Price: {{ product.price }} €</strong></p>
-          <p><strong>Rating: {{ product.rating.rate }}</strong></p>
-        </div>
+      <div class="col-4">
+        <app-team [team]="team1"
+                  [players]="players1"
+                  (scoreEmitter)="updateScore(team1, $event)"
+                  (playerEmitter)="changePlayer(team1, $event)"></app-team>
+      </div>
+      <div class="col-4">
+        <h2>VS</h2>
+      </div>
+      <div class="col-4">
+        <app-team [team]="team2"
+                  [players]="players2"
+                  (scoreEmitter)="updateScore(team2, $event)"
+                  (playerEmitter)="changePlayer(team2, $event)"></app-team>
+      </div>
+    </div>
+    <div class="row align-items-start text-center">
+      <div class="col-4">
+        <h2>{{ score1 }}</h2>
+      </div>
+      <div class="col-4">
+        <h2>:</h2>
+      </div>
+      <div class="col-4">
+        <h2>{{ score2 }}</h2>
       </div>
     </div>
   </div>
 </div>
 
-<div class="text-center p-5">
-  <button type="button" class="btn btn-primary" (click)="toggleThirdColumn()">Toggle Third Column</button>
-</div>
+
